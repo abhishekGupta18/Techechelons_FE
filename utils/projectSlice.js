@@ -8,6 +8,6 @@ const projectSlice = createSlice({
   },
 });
 
-export const { addProjects } = feedSlice.actions;
+export const { addProjects } = projectSlice.actions;
 
 export default projectSlice.reducer;

@@ -50,7 +50,7 @@ const Projects = () => {
         }
     };
 
-
+    console.log(projects)
     useEffect(() => {
         fetchProjects()
     }, [])
@@ -103,6 +103,7 @@ const Projects = () => {
                                     <th scope="col" className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-sky-700 uppercase tracking-wider hidden md:table-cell">Description</th>
                                     <th scope="col" className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-sky-700 uppercase tracking-wider hidden sm:table-cell">Skills</th>
                                     <th scope="col" className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-sky-700 uppercase tracking-wider hidden sm:table-cell">Members</th>
+                                    <th scope="col" className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-sky-700 uppercase tracking-wider hidden sm:table-cell">Is Active</th>
                                     <th scope="col" className="px-2 sm:px-4 py-2 sm:py-3 text-left text-xs font-medium text-sky-700 uppercase tracking-wider">Actions</th>
                                 </tr>
                             </thead>
@@ -140,6 +141,11 @@ const Projects = () => {
                                             </div>
                                         </td>
                                         <td className="px-2 sm:px-4 py-2 sm:py-3 text-sky-700 hidden sm:table-cell text-sm">{pro.members}</td>
+                                        <td className="px-2 sm:px-4 py-2 sm:py-3 hidden sm:table-cell">
+                                            <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${pro.isActive ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                                                {pro.isActive ? 'Yes' : 'No'}
+                                            </span>
+                                        </td>
                                         <td className="px-2 sm:px-4 py-2 sm:py-3 whitespace-nowrap text-sm font-medium">
                                             <div className="flex space-x-2">
                                                 <button
@@ -207,6 +213,7 @@ const Projects = () => {
                     </div>
                 }
             >
+                <p className="text-center text-gray-600">Are you sure you want to delete this project? This action cannot be undone.</p>
             </Dialog>
 
         </div>

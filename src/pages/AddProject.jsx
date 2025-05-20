@@ -183,7 +183,6 @@ const AddProject = () => {
                             optionLabel="name"
                             display="chip"
                             placeholder="Select Skills"
-                            maxSelectedLabels={3}
                             selectedItemsLabel={selectedSkillsTemplate}
                             itemTemplate={skillItemTemplate}
                             className={`w-full ${errors.skills ? 'p-invalid' : ''}`}
